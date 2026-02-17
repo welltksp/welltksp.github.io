@@ -1,8 +1,12 @@
+/* PALETA DE CORES QRS ENGENHARIA (Extraída da Logo) */
 :root {
-    --color-primary-dark: #0A2472;
-    --color-primary-medium: #2A4B7C;
+    --color-primary-dark: #111D40;
+    /* Azul Marinho da Logo */
+    --color-primary-medium: #1B2B5A;
+    /* Variação para profundidade */
+    --color-accent: #FCC156;
+    /* Amarelo Ouro da Logo */
     --color-gray-industrial: #4A5568;
-    --color-accent: #00a6e8;
     --color-bg: #F8FAFC;
     --color-text-main: #1E293B;
     --color-text-sec: #64748B;
@@ -20,7 +24,7 @@ body {
     padding-top: 76px;
 }
 
-/* Navbar */
+/* --- NAVBAR --- */
 .navbar {
     background-color: var(--color-primary-dark);
     transition: all 0.3s ease;
@@ -28,14 +32,13 @@ body {
 }
 
 .navbar.scrolled {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    padding: 0.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0.6rem 0;
 }
 
 .nav-link {
     color: rgba(255, 255, 255, 0.8) !important;
     font-weight: 500;
-    transition: color 0.2s;
 }
 
 .nav-link:hover,
@@ -43,38 +46,40 @@ body {
     color: var(--color-accent) !important;
 }
 
-/* CORREÇÃO: Nova classe para o .ENG */
 .brand-suffix {
     color: var(--color-accent);
 }
 
+/* Botão de Destaque na Navbar */
 .btn-cta {
     background-color: var(--color-accent);
-    color: white !important;
+    color: var(--color-primary-dark) !important;
+    /* Texto escuro para contraste */
     border-radius: 4px;
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1.2rem !important;
     margin-left: 10px;
+    font-weight: 700;
 }
 
 .btn-cta:hover {
-    background-color: #0090c7;
+    background-color: #e5af4d;
+    transform: translateY(-1px);
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 .hero {
     background-image: url('../img/hero-placa.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 90vh;
+    min-height: 85vh;
     margin-top: -76px;
     position: relative;
 }
 
-/* CORREÇÃO: Nova classe para o texto do Hero */
 .hero-lead {
     max-width: 700px;
 }
@@ -85,27 +90,29 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 36, 114, 0.9) 0%, rgba(42, 75, 124, 0.7) 100%);
+    /* Gradiente usando o azul da logo */
+    background: linear-gradient(135deg, rgba(17, 29, 64, 0.9) 0%, rgba(27, 43, 90, 0.7) 100%);
     z-index: 1;
 }
 
-/* Buttons Custom */
+/* --- BOTÕES GERAIS --- */
 .btn-primary-custom {
     background-color: var(--color-accent);
     border: none;
-    color: white;
-    font-weight: 600;
-    padding: 0.8rem 1.5rem;
-    transition: transform 0.2s;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    transition: all 0.2s ease;
 }
 
 .btn-primary-custom:hover {
-    background-color: #0090c7;
+    background-color: #e5af4d;
+    color: var(--color-primary-dark);
     transform: translateY(-2px);
-    color: white;
+    box-shadow: 0 4px 15px rgba(252, 193, 86, 0.3);
 }
 
-/* Services */
+/* --- SERVIÇOS --- */
 .section-padding {
     padding: 80px 0;
 }
@@ -113,18 +120,19 @@ body {
 .service-card {
     background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid var(--color-accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--color-accent);
+    /* Detalhe em amarelo */
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .icon-box {
-    color: var(--color-primary-medium);
+    color: var(--color-accent);
+    /* Ícones agora são amarelos */
 }
 
 .divider {
@@ -135,33 +143,30 @@ body {
     border-radius: 2px;
 }
 
-/* Processo */
-.process-step {
-    position: relative;
-    padding: 20px;
-}
-
+/* --- PROCESSO --- */
 .step-number {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     background-color: var(--color-primary-dark);
-    color: white;
+    color: var(--color-accent);
+    /* Número amarelo no fundo azul */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 800;
     margin: 0 auto 20px;
     position: relative;
     z-index: 2;
+    border: 2px solid var(--color-accent);
 }
 
 @media (min-width: 768px) {
     .process-step:not(.last)::after {
         content: '';
         position: absolute;
-        top: 45px;
+        top: 27px;
         right: -50%;
         width: 100%;
         height: 2px;
@@ -170,14 +175,14 @@ body {
     }
 }
 
-/* Portfolio */
+/* --- PORTFOLIO --- */
 .portfolio-item {
     height: 250px;
-    background: linear-gradient(45deg, var(--color-primary-medium), var(--color-gray-industrial));
+    /* Gradiente seguindo a paleta da logo */
+    background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary-medium));
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .portfolio-overlay {
@@ -185,57 +190,41 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(10, 36, 114, 0.9);
-    padding: 15px;
+    background: rgba(17, 29, 64, 0.95);
+    padding: 20px;
     color: white;
     transform: translateY(100%);
     transition: transform 0.3s ease;
+    border-top: 3px solid var(--color-accent);
 }
 
 .portfolio-item:hover .portfolio-overlay {
     transform: translateY(0);
 }
 
-/* Technologies */
-.bg-primary-dark {
-    background-color: var(--color-primary-dark);
-}
-
+/* --- TECNOLOGIAS --- */
 .tech-badge {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(252, 193, 86, 0.1);
     border: 1px solid var(--color-accent);
-    color: white;
+    color: var(--color-accent);
     padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
     display: inline-block;
 }
 
 .text-accent {
-    color: var(--color-accent);
+    color: var(--color-accent) !important;
 }
 
-.segment-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.segment-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-}
-
-/* Support Card */
+/* --- SUPORTE E VOLTAR AO TOPO --- */
 .support-card {
     background-color: white;
-    border: 2px dashed var(--color-gray-industrial);
+    border: 2px dashed var(--color-accent);
     border-radius: 8px;
 }
 
-/* Back to Top */
 #backToTop {
     position: fixed;
     bottom: 30px;
@@ -244,58 +233,46 @@ body {
     width: 50px;
     height: 50px;
     display: none;
-    /* Mantido como estado inicial */
     align-items: center;
     justify-content: center;
     z-index: 999;
-    transition: opacity 0.3s;
+    transition: all 0.3s;
+    border: none;
+    border-radius: 50%;
 }
 
-#backToTop:hover {
-    background-color: var(--color-primary-dark);
+#backToTop svg {
+    stroke: var(--color-primary-dark);
 }
 
-/* CORREÇÃO: Classe de estado para o botão via JS */
 #backToTop.show {
     display: flex;
 }
 
-/* Ajustes para o Menu Mobile (Offcanvas) */
+/* --- MENU MOBILE (OFFCANVAS) --- */
 .offcanvas {
     background-color: var(--color-primary-dark);
-    /* Fundo azul profundo */
     color: white;
-}
-
-.offcanvas-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .offcanvas-title {
     color: var(--color-accent);
-    /* Título do menu em Azul Técnico */
-    font-weight: bold;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-/* Faz o botão 'X' de fechar ficar branco */
 .offcanvas .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-/* Garante que os links no mobile não tenham margens estranhas */
 @media (max-width: 991px) {
-    .navbar-nav {
-        padding-top: 2rem;
-    }
-
     .nav-item {
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        padding: 10px 0;
     }
 
     .btn-cta {
-        margin-left: 0 !important;
-        margin-top: 20px;
-        text-align: center;
+        margin: 20px 0 0 0 !important;
+        display: block;
+        width: 100%;
     }
 }
