@@ -274,7 +274,7 @@
                         <hr class="my-4">
                         <div class="contact-info">
                             <p><strong>Email:</strong> contato@qrsengenharia.com.br</p>
-                            <p><strong>Tel:</strong> +55 (11) 99999-9999</p>
+                            <p><strong>Tel:</strong> +55 (11) 95811-8676</p>
                             <p><strong>Sede:</strong> São Paulo, SP</p>
                         </div>
                         <img src="img/laboratorio.jpg" alt="Laboratório QRS" class="img-fluid rounded mt-3 shadow-sm"
@@ -285,32 +285,41 @@
                 <div class="col-lg-7">
                     <h2 class="mb-4">Vamos discutir seu projeto?</h2>
                     <form id="contactForm" class="needs-validation" novalidate>
+
+                        <input type="hidden" name="access_key" value="ac627997-f1a0-4fc8-87c1-9cace2300677">
+                        <input type="hidden" name="subject" value="Novo contato pelo site - QRS Engenharia">
+                        <input type="hidden" name="from_name" value="QRS Engenharia - Site">
+                        <input type="checkbox" name="botcheck" class="d-none" style="display:none">
+
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" required>
+                                <input type="text" class="form-control" id="nome" name="name" required>
                                 <div class="invalid-feedback">Por favor, insira seu nome.</div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="email" class="form-label">Email Corporativo</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email" name="email" required>
                                 <div class="invalid-feedback">Email inválido.</div>
                             </div>
                         </div>
+
                         <div class="mb-3">
                             <label for="assunto" class="form-label">Assunto</label>
-                            <select class="form-select" id="assunto" required>
+                            <select class="form-select" id="assunto" name="assunto" required>
                                 <option value="" selected disabled>Selecione...</option>
                                 <option value="orcamento">Orçamento de Projeto</option>
                                 <option value="consultoria">Consultoria Técnica</option>
                                 <option value="parceria">Parceria</option>
                             </select>
                         </div>
+
                         <div class="mb-3">
                             <label for="mensagem" class="form-label">Detalhes do Projeto</label>
-                            <textarea class="form-control" id="mensagem" rows="5" required></textarea>
+                            <textarea class="form-control" id="mensagem" name="message" rows="5" required></textarea>
                             <div class="invalid-feedback">A mensagem é obrigatória.</div>
                         </div>
+
                         <div class="d-flex gap-3 align-items-center">
                             <button type="submit" class="btn btn-primary-custom px-5">Enviar Mensagem</button>
                             <a href="#" class="text-success text-decoration-none fw-bold d-flex align-items-center">
@@ -321,7 +330,10 @@
                                 WhatsApp
                             </a>
                         </div>
+
+                        <div id="formStatus" class="mt-3"></div>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -347,5 +359,3 @@
 </body>
 
 </html>
-
-
