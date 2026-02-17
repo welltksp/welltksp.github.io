@@ -59,22 +59,55 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 4. Form Validation
+    // 4. Form Submit via Web3Forms (AJAX sem redirecionar)
     const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
 
-    form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
+    if (form) {
+        form.addEventListener('submit', async function (event) {
             event.preventDefault();
-            event.stopPropagation();
-        } else {
-            event.preventDefault();
-            alert('Mensagem enviada com sucesso! A equipe de engenharia entrará em contato.');
-            form.reset();
-            form.classList.remove('was-validated');
-            return;
-        }
-        form.classList.add('was-validated');
-    }, false);
+
+            // Se não achou a div de status, evita quebrar o JS
+            if (!statusDiv) return;
+
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+                form.classList.add('was-validated');
+                statusDiv.innerHTML = '';
+                return;
+            }
+
+            form.classList.add('was-validated');
+            statusDiv.innerHTML = '<div class="alert alert-info mt-3">Enviando...</div>';
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    statusDiv.innerHTML =
+                        '<div class="alert alert-success mt-3">Mensagem enviada com sucesso! Entraremos em contato.</div>';
+                    form.reset();
+                    form.classList.remove('was-validated');
+                } else {
+                    statusDiv.innerHTML =
+                        '<div class="alert alert-danger mt-3">Erro ao enviar: ' + (result.message || 'tente novamente') + '</div>';
+                }
+            } catch (error) {
+                statusDiv.innerHTML =
+                    '<div class="alert alert-danger mt-3">Falha de conexão ao enviar. Tente novamente.</div>';
+            }
+        });
+    }
+
+
 
     // 5. Back to Top Button (Refatorado para usar Classes)
     const backToTopBtn = document.getElementById('backToTop');
