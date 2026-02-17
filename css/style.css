@@ -2,7 +2,7 @@
     --color-primary-dark: #0A2472;
     --color-primary-medium: #2A4B7C;
     --color-gray-industrial: #4A5568;
-    --color-accent: #00A8E8;
+    --color-accent: #00a6e8;
     --color-bg: #F8FAFC;
     --color-text-main: #1E293B;
     --color-text-sec: #64748B;
@@ -258,4 +258,44 @@ body {
 /* CORREÇÃO: Classe de estado para o botão via JS */
 #backToTop.show {
     display: flex;
+}
+
+/* Ajustes para o Menu Mobile (Offcanvas) */
+.offcanvas {
+    background-color: var(--color-primary-dark);
+    /* Fundo azul profundo */
+    color: white;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.offcanvas-title {
+    color: var(--color-accent);
+    /* Título do menu em Azul Técnico */
+    font-weight: bold;
+}
+
+/* Faz o botão 'X' de fechar ficar branco */
+.offcanvas .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Garante que os links no mobile não tenham margens estranhas */
+@media (max-width: 991px) {
+    .navbar-nav {
+        padding-top: 2rem;
+    }
+
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 10px 0;
+    }
+
+    .btn-cta {
+        margin-left: 0 !important;
+        margin-top: 20px;
+        text-align: center;
+    }
 }
