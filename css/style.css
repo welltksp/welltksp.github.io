@@ -50,20 +50,33 @@ body {
     color: var(--color-accent);
 }
 
-/* Botão de Destaque na Navbar */
+/* Reset do botão para se comportar como os outros e só destacar no hover conforme pedido */
 .btn-cta {
-    background-color: var(--color-accent);
-    color: var(--color-primary-dark) !important;
-    /* Texto escuro para contraste */
+    background-color: transparent !important;
+    /* Começa transparente */
+    color: rgba(255, 255, 255, 0.8) !important;
+    /* Cor igual aos outros links */
+    border: 1px solid var(--color-accent);
+    /* Borda fina para indicar que é um botão */
     border-radius: 4px;
     padding: 0.5rem 1.2rem !important;
     margin-left: 10px;
     font-weight: 700;
+    transition: all 0.3s ease;
 }
 
+/* Fica amarelo apenas no Hover */
 .btn-cta:hover {
-    background-color: #e5af4d;
+    background-color: var(--color-accent) !important;
+    color: var(--color-primary-dark) !important;
     transform: translateY(-1px);
+}
+
+/* Garante que o texto não "suma" ou mude de cor indesejada quando ativo */
+.navbar-nav .nav-link.btn-cta.active,
+.navbar-nav .nav-link.btn-cta:focus {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background-color: transparent !important;
 }
 
 .navbar-toggler-icon {
@@ -275,4 +288,36 @@ body {
         display: block;
         width: 100%;
     }
+}
+
+/* --- WHATSAPP FLUTUANTE CORREÇÃO --- */
+#whatsappFloat {
+    position: fixed;
+    right: 30px;
+    bottom: 95px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Ajuste no SVG para não deformar */
+#whatsappFloat svg {
+    fill: #ffffff;
+    width: 32px;
+    /* Tamanho fixo para o ícone interno */
+    height: 32px;
+}
+
+#whatsappFloat:hover {
+    transform: scale(1.1);
+    /* Um leve aumento em vez de só subir */
+    background: #20ba5a;
 }
