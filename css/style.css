@@ -188,14 +188,31 @@ body {
     }
 }
 
-/* --- PORTFOLIO --- */
+/* --- PORTFOLIO ATUALIZADO --- */
 .portfolio-item {
     height: 250px;
-    /* Gradiente seguindo a paleta da logo */
-    background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary-medium));
+    background: var(--color-primary-dark);
+    /* Fundo reserva caso a imagem falhe */
     border-radius: 8px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para a imagem dentro do card */
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Faz a imagem preencher o espaço sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+/* Efeito de zoom na imagem ao passar o mouse */
+.portfolio-item:hover img {
+    transform: scale(1.1);
 }
 
 .portfolio-overlay {
@@ -204,15 +221,19 @@ body {
     left: 0;
     width: 100%;
     background: rgba(17, 29, 64, 0.95);
+    /* Azul marinho semi-transparente */
     padding: 20px;
     color: white;
     transform: translateY(100%);
+    /* Escondido abaixo */
     transition: transform 0.3s ease;
     border-top: 3px solid var(--color-accent);
+    z-index: 2;
 }
 
 .portfolio-item:hover .portfolio-overlay {
     transform: translateY(0);
+    /* Sobe ao passar o mouse */
 }
 
 /* --- TECNOLOGIAS --- */
