@@ -747,3 +747,24 @@ footer .h4 {
 .footer .row>div {
     display: block;
 }
+
+/* Estilo para projetos em desenvolvimento */
+.project-rd img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.project-rd::after {
+    content: "EM P&D";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffc107;
+    /* Amarelo alerta/engenharia */
+    color: #000;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 2;
+}
