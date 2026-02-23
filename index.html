@@ -2,32 +2,61 @@
 <html lang="pt-br">
 
 <head>
+    <!-- 
+        META CONFIGURAÇÕES BÁSICAS
+        Define o conjunto de caracteres (UTF-8) e a viewport para responsividade.
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="QRS Engenharia - Desenvolvimento de Hardware, Firmware e Supervisórios Industriais.">
     <title>QRS Engenharia | Soluções Embarcadas</title>
 
+    <!-- 
+        CARREGAMENTO DE RECURSOS EXTERNOS
+        Bootstrap CSS (v5.3) para estilização rápida e responsiva.
+    -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- 
+        CARREGAMENTO DE RECURSOS LOCAIS
+        Arquivo de estilos personalizado da QRS.
+    -->
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="icon" <link rel="icon" href="img/qrsLogo.png" type="image/x-icon">
+    <!-- 
+        FAVICON DO SITE
+        Ícone que aparece na aba do navegador.
+        CORREÇÃO: A linha estava duplicada e com erro de sintaxe. Agora aponta para img/qrsLogo.png.
+    -->
+    <link rel="icon" href="img/qrsLogo.png" type="image/x-icon">
 
 </head>
 
 <body id="inicio">
-
+    <!-- 
+        ==================================================
+        CABEÇALHO E BARRA DE NAVEGAÇÃO (NAVBAR)
+        ==================================================
+        - Navbar fixa no topo.
+        - Utiliza offcanvas para o menu em dispositivos móveis.
+        - Marca "QRS Engenharia" com logo.
+    -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
+            <!-- Logo e nome da marca -->
             <a class="navbar-brand d-flex align-items-center" href="#inicio">
                 <img src="img/QRS.png" alt="QRS Engenharia" width="200" height="40" class="me-2">
                 <!--- <span class="fw-bold text-white">QRS<span class="brand-suffix"> Engenharia</span></span> -->
             </a>
+
+            <!-- Botão para menu hamburguer em mobile. Dispara o offcanvas. -->
             <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Offcanvas (menu lateral) para mobile -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -35,6 +64,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
+                    <!-- Itens do menu de navegação -->
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" href="#inicio">Início</a></li>
                         <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
@@ -49,6 +79,13 @@
         </div>
     </nav>
 
+    <!-- 
+        ==================================================
+        SEÇÃO HERO (PRINCIPAL)
+        ==================================================
+        - Primeira seção visual do site, com um call-to-action (CTA).
+        - Fundo com overlay escuro para destacar o texto.
+    -->
     <section class="hero d-flex align-items-center">
         <div class="container text-center text-white position-relative z-2">
             <h1 class="display-3 fw-bold mb-4">Soluções em Hardware e Firmware sob medida</h1>
@@ -59,9 +96,17 @@
                 <a href="#portfolio" class="btn btn-outline-light btn-lg">Ver Projetos</a>
             </div>
         </div>
+        <!-- Overlay escuro sobre a imagem de fundo do hero -->
         <div class="hero-overlay"></div>
     </section>
 
+    <!-- 
+        ==================================================
+        SEÇÃO DE SERVIÇOS
+        ==================================================
+        - Exibe os três principais serviços oferecidos: Hardware, Firmware e Supervisórios.
+        - Ícones SVG representando cada área.
+    -->
     <section id="servicos" class="section-padding">
         <div class="container">
             <div class="section-title text-center mb-5">
@@ -69,9 +114,11 @@
                 <div class="divider mx-auto"></div>
             </div>
             <div class="row g-4">
+                <!-- Serviço 1: Hardware Eletrônico -->
                 <div class="col-md-4">
                     <div class="service-card h-100 p-4 text-center">
                         <div class="icon-box mb-3">
+                            <!-- Ícone de "cpu" ou "chip" -->
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
@@ -91,9 +138,11 @@
                             industrial.</p>
                     </div>
                 </div>
+                <!-- Serviço 2: Firmware Embarcado -->
                 <div class="col-md-4">
                     <div class="service-card h-100 p-4 text-center">
                         <div class="icon-box mb-3">
+                            <!-- Ícone de "código" ou "tags" -->
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="16 18 22 12 16 6"></polyline>
@@ -105,9 +154,11 @@
                             comunicação IoT.</p>
                     </div>
                 </div>
+                <!-- Serviço 3: Supervisórios (SCADA/IHM) -->
                 <div class="col-md-4">
                     <div class="service-card h-100 p-4 text-center">
                         <div class="icon-box mb-3">
+                            <!-- Ícone de "monitor" -->
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -124,6 +175,13 @@
         </div>
     </section>
 
+    <!-- 
+        ==================================================
+        SEÇÃO DE PROCESSO / CICLO DE DESENVOLVIMENTO
+        ==================================================
+        - Mostra as 4 etapas do ciclo de desenvolvimento em ordem.
+        - Fundo claro (bg-light) para diferenciar da seção anterior.
+    -->
     <section id="processo" class="section-padding bg-light">
         <div class="container">
             <div class="section-title text-center mb-5">
@@ -131,21 +189,25 @@
                 <div class="divider mx-auto"></div>
             </div>
             <div class="row text-center process-row">
+                <!-- Etapa 1: Especificação -->
                 <div class="col-md-3 process-step">
                     <div class="step-number">1</div>
                     <h4>Especificação</h4>
                     <p class="small text-muted">Definição técnica e viabilidade.</p>
                 </div>
+                <!-- Etapa 2: Prototipagem -->
                 <div class="col-md-3 process-step">
                     <div class="step-number">2</div>
                     <h4>Prototipagem</h4>
                     <p class="small text-muted">MVP e testes de bancada.</p>
                 </div>
+                <!-- Etapa 3: Homologação -->
                 <div class="col-md-3 process-step">
                     <div class="step-number">3</div>
                     <h4>Homologação</h4>
                     <p class="small text-muted">Testes de campo e certificação.</p>
                 </div>
+                <!-- Etapa 4: Entrega -->
                 <div class="col-md-3 process-step last">
                     <div class="step-number">4</div>
                     <h4>Entrega</h4>
@@ -155,6 +217,14 @@
         </div>
     </section>
 
+    <!-- 
+        ==================================================
+        SEÇÃO DE PORTFÓLIO
+        ==================================================
+        - Exibe uma grade com projetos recentes.
+        - Cada item tem uma imagem (placeholder) e um overlay com descrição.
+        - ATENÇÃO: Muitas imagens apontam para o mesmo arquivo (projeto1.jpg). Isso pode ser um placeholder temporário.
+    -->
     <section id="portfolio" class="section-padding">
         <div class="container">
             <div class="section-title text-center mb-5">
@@ -162,6 +232,7 @@
                 <div class="divider mx-auto"></div>
             </div>
             <div class="row g-3">
+                <!-- Projeto 1: Simulador de ECG -->
                 <div class="col-md-4 col-sm-6">
                     <div class="portfolio-item">
                         <img src="img/projeto1.png" alt="Simulador de ECG">
@@ -171,6 +242,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Projeto 2: IHM Industrial -->
                 <div class="col-md-4 col-sm-6">
                     <div class="portfolio-item">
                         <img src="img/projeto1.jpg" alt="Controlador IoT">
@@ -180,6 +252,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Projeto 3: Datalogger 4G -->
                 <div class="col-md-4 col-sm-6">
                     <div class="portfolio-item">
                         <img src="img/projeto1.jpg" alt="Controlador IoT">
@@ -189,6 +262,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Projeto 4: Inversor de Frequência -->
                 <div class="col-md-4 col-sm-6">
                     <div class="portfolio-item">
                         <img src="img/projeto1.jpg" alt="Controlador IoT">
@@ -198,6 +272,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Projeto 5: Gateway Modbus -->
                 <div class="col-md-4 col-sm-6">
                     <div class="portfolio-item">
                         <img src="img/projeto1.jpg" alt="Controlador IoT">
@@ -207,6 +282,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Projeto 6: BMS Automotivo -->
                 <div class="col-md-4 col-sm-6">
                     <div class="portfolio-item">
                         <img src="img/projeto1.jpg" alt="Controlador IoT">
@@ -220,9 +296,18 @@
         </div>
     </section>
 
+    <!-- 
+        ==================================================
+        SEÇÃO DE TECNOLOGIAS E SEGMENTOS
+        ==================================================
+        - Fundo escuro para contraste.
+        - Lado esquerdo: badges com as tecnologias utilizadas.
+        - Lado direito: cards com os segmentos atendidos.
+    -->
     <section id="tecnologias" class="section-padding bg-dark text-white">
         <div class="container">
             <div class="row align-items-center">
+                <!-- Coluna de Tecnologias -->
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h3 class="mb-4 text-accent">Stack Tecnológico</h3>
                     <div class="d-flex flex-wrap gap-2">
@@ -240,23 +325,24 @@
                         <span class="tech-badge">LoRaWAN</span>
                     </div>
                 </div>
+                <!-- Coluna de Segmentos Atendidos -->
                 <div class="col-lg-6">
                     <div class="card bg-secondary text-white border-0 p-4">
                         <h4 class="mb-3">Segmentos Atendidos</h4>
                         <ul class="segment-list">
-                            <li><svg class="me-2" width="16" height="16" fill="var(--accent)" viewBox="0 0 16 16">
+                            <li><svg class="me-2" width="16" height="16" fill="var(--color-accent) viewBox=" 0 0 16 16">
                                     <path d="M8 0L16 8L8 16L0 8L8 0Z" />
                                 </svg> Automotivo & Veículos Elétricos</li>
-                            <li><svg class="me-2" width="16" height="16" fill="var(--accent)" viewBox="0 0 16 16">
+                            <li><svg class="me-2" width="16" height="16" fill="var(--color-accent) viewBox=" 0 0 16 16">
                                     <path d="M8 0L16 8L8 16L0 8L8 0Z" />
                                 </svg> Agroindústria 4.0</li>
-                            <li><svg class="me-2" width="16" height="16" fill="var(--accent)" viewBox="0 0 16 16">
+                            <li><svg class="me-2" width="16" height="16" fill="var(--color-accent) viewBox=" 0 0 16 16">
                                     <path d="M8 0L16 8L8 16L0 8L8 0Z" />
                                 </svg> Automação Predial</li>
-                            <li><svg class="me-2" width="16" height="16" fill="var(--accent)" viewBox="0 0 16 16">
+                            <li><svg class="me-2" width="16" height="16" fill="var(--color-accent) viewBox=" 0 0 16 16">
                                     <path d="M8 0L16 8L8 16L0 8L8 0Z" />
                                 </svg> Equipamentos Médicos</li>
-                            <li><svg class="me-2" width="16" height="16" fill="var(--accent)" viewBox="0 0 16 16">
+                            <li><svg class="me-2" width="16" height="16" fill="var(--color-accent) viewBox=" 0 0 16 16">
                                     <path d="M8 0L16 8L8 16L0 8L8 0Z" />
                                 </svg> Energia Renovável</li>
                         </ul>
@@ -266,10 +352,19 @@
         </div>
     </section>
 
+    <!-- 
+        ==================================================
+        SEÇÃO DE CONTATO E SUPORTE
+        ==================================================
+        - Combina informações de contato, suporte ao cliente e formulário de contato.
+        - O formulário utiliza Web3Forms (access_key) para envio.
+    -->
     <section id="contato" class="section-padding">
         <div class="container">
             <div class="row">
+                <!-- Coluna da Esquerda: Suporte e Informações de Contato -->
                 <div class="col-lg-5 mb-5 mb-lg-0">
+                    <!-- O id "suporte" está aqui, permitindo link direto âncora -->
                     <div id="suporte" class="support-card p-4 h-100">
                         <h3>Suporte Técnico</h3>
                         <p class="mb-4">Já é cliente? Acesse a área de documentação ou abra um ticket.</p>
@@ -279,31 +374,45 @@
                             <button class="btn btn-outline-dark">Portal do Cliente</button>
                         </div>
                         <hr class="my-4">
+                        <!-- Informações de contato direto -->
                         <div class="contact-info">
                             <p><strong>Email:</strong> contato@qrsengenharia.com</p>
                             <p><strong>Tel:</strong> +55 (11) 95811-8676</p>
                             <p><strong>Sede:</strong> São Paulo, SP</p>
                         </div>
+                        <!-- Imagem do laboratório -->
                         <img src="img/laboratorio.jpg" alt="Laboratório QRS" class="img-fluid rounded mt-3 shadow-sm"
                             loading="lazy">
                     </div>
                 </div>
 
+                <!-- Coluna da Direita: Formulário de Contato -->
                 <div class="col-lg-7">
                     <h2 class="mb-4">Vamos discutir seu projeto?</h2>
+
+                    <!-- 
+                        FORMULÁRIO DE CONTATO
+                        - Utiliza Web3Forms (https://web3forms.com/) para envio.
+                        - O campo "botcheck" é um honeypot para evitar spam (deve ficar oculto).
+                        - Validação HTML5 (required) e validação customizada com Bootstrap (needs-validation).
+                    -->
                     <form id="contactForm" class="needs-validation" novalidate>
 
+                        <!-- CONFIGURAÇÕES WEB3FORMS -->
                         <input type="hidden" name="access_key" value="ac627997-f1a0-4fc8-87c1-9cace2300677">
                         <input type="hidden" name="subject" value="Novo contato pelo site - QRS Engenharia">
                         <input type="hidden" name="from_name" value="QRS Engenharia - Site">
+                        <!-- Honeypot para evitar spam (campo escondido) -->
                         <input type="checkbox" name="botcheck" class="d-none" style="display:none">
 
                         <div class="row">
+                            <!-- Campo: Nome -->
                             <div class="col-md-6 mb-3">
                                 <label for="nome" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="nome" name="name" required>
                                 <div class="invalid-feedback">Por favor, insira seu nome.</div>
                             </div>
+                            <!-- Campo: Email -->
                             <div class="col-md-6 mb-3">
                                 <label for="email" class="form-label">Email Corporativo</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
@@ -311,6 +420,7 @@
                             </div>
                         </div>
 
+                        <!-- Campo: Assunto (dropdown) -->
                         <div class="mb-3">
                             <label for="assunto" class="form-label">Assunto</label>
                             <select class="form-select" id="assunto" name="assunto" required>
@@ -321,16 +431,19 @@
                             </select>
                         </div>
 
+                        <!-- Campo: Mensagem -->
                         <div class="mb-3">
                             <label for="mensagem" class="form-label">Detalhes do Projeto</label>
                             <textarea class="form-control" id="mensagem" name="message" rows="5" required></textarea>
                             <div class="invalid-feedback">A mensagem é obrigatória.</div>
                         </div>
 
+                        <!-- Botão de Envio -->
                         <div class="d-flex gap-3 align-items-center">
                             <button type="submit" class="btn btn-primary-custom px-5">Enviar Mensagem</button>
                         </div>
 
+                        <!-- Área para exibir status do envio (sucesso/erro) via JavaScript -->
                         <div id="formStatus" class="mt-3"></div>
                     </form>
 
@@ -339,21 +452,182 @@
         </div>
     </section>
 
-    <footer class="bg-primary-dark text-white py-4 mt-auto">
-        <div class="container text-center">
-            <div class="mb-3">
-                <span class="fw-bold h4">QRS Engenharia</span>
+    <!-- 
+        ==================================================
+        RODAPÉ (FOOTER)
+        ==================================================
+
+-->
+    <footer class="footer bg-primary-dark text-white pt-5 pb-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna 1: Sobre -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <img src="img/QRS.png" alt="QRS Engenharia" width="180" height="36" class="mb-3" loading="lazy">
+                    <p class="text-white-50 small lh-base mb-4">Soluções em hardware e firmware sob medida para
+                        indústria 4.0. Transformamos especificações complexas em sistemas eletrônicos robustos e
+                        escaláveis.</p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="trust-badge">Projetos customizados</span>
+                        <span class="trust-badge">Hardware sob medida</span>
+                        <span class="trust-badge">Firmware embarcado</span>
+                        <span class="trust-badge">Parceria técnica</span>
+                        <span class="trust-badge">Documentação completa</span>
+                        <span class="trust-badge">Prototipagem rápida</span>
+                    </div>
+
+                    <p class="small text-white-50 d-flex align-items-center gap-2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--color-accent)">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        <span>Construindo confiança com entregas de qualidade, um projeto por vez</span>
+                    </p>
+                </div>
+
+                <!-- Coluna 2: Links Rápidos -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4 text-accent">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#inicio" class="footer-link">Início</a></li>
+                        <li class="mb-2"><a href="#servicos" class="footer-link">Serviços</a></li>
+                        <li class="mb-2"><a href="#processo" class="footer-link">Processo</a></li>
+                        <li class="mb-2"><a href="#portfolio" class="footer-link">Portfólio</a></li>
+                        <li class="mb-2"><a href="#tecnologias" class="footer-link">Tecnologias</a></li>
+                        <li class="mb-2"><a href="#contato" class="footer-link">Contato</a></li>
+                    </ul>
+                </div>
+                <!-- Coluna 3: Contatos -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4 text-accent">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <span class="d-flex align-items-center">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span class="text-white-50 ms-2">contato@qrsengenharia.com</span>
+                            </span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="d-flex align-items-center">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a1.999 1.999 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 10a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                                <span class="text-white-50 ms-2">+55 (11) 95811-8676</span>
+                            </span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="d-flex align-items-center">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span class="text-white-50 ms-2">São Paulo, SP</span>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <a href="#" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                                <circle cx="4" cy="4" r="2"></circle>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <rect x="10" y="9" width="4" height="12"></rect>
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                            </svg>
+                        </a>
+
+                        <a href="https://github.com/welltksp/welltksp.github.io/wiki" class="social-icon"
+                            aria-label="GitHub" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                                <path
+                                    d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02a7.24 7.24 0 0 1 1.94-5.03A6.96 6.96 0 0 1 7.06 0h9.92zm0 2.16H7.06c-1.34 0-2.48.48-3.44 1.44S2.16 5.72 2.16 7.06v9.92c0 1.42.52 2.61 1.53 3.61 1.01 1 2.18 1.5 3.49 1.5h9.92c1.34 0 2.48-.48 3.44-1.44 1-1 1.47-2.16 1.47-3.5V7.06c0-1.34-.48-2.48-1.44-3.44-1-.99-2.16-1.47-3.5-1.47zM12 5.76c1.75 0 3.23.61 4.44 1.83 1.21 1.22 1.83 2.7 1.83 4.44 0 1.75-.61 3.23-1.83 4.44-1.22 1.22-2.7 1.83-4.44 1.83-1.75 0-3.23-.61-4.44-1.83-1.22-1.22-1.83-2.7-1.83-4.44 0-1.75.61-3.23 1.83-4.44 1.22-1.22 2.7-1.83 4.44-1.83zm0 2.16c-1.13 0-2.09.4-2.88 1.19-.79.79-1.19 1.75-1.19 2.88s.4 2.09 1.19 2.88c.79.79 1.75 1.19 2.88 1.19s2.09-.4 2.88-1.19c.79-.79 1.19-1.75 1.19-2.88s-.4-2.09-1.19-2.88c-.79-.79-1.75-1.19-2.88-1.19zm6.41-2.74c.39 0 .72.14.99.41.27.27.41.6.41.99 0 .39-.14.72-.41.99-.27.27-.6.41-.99.41-.39 0-.72-.14-.99-.41-.27-.27-.41-.6-.41-.99 0-.39.14-.72.41-.99.27-.27.6-.41.99-.41z" />
+                            </svg>
+                        </a>
+
+                        <a href="#" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna 4: Newsletter -->
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-4 text-accent">Newsletter</h5>
+                    <p class="text-white-50 small mb-3">Receba novidades e cases de sucesso</p>
+                    <form class="mb-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control newsletter-input" placeholder="Seu e-mail" required>
+                            <button class="btn btn-newsletter" type="submit">Assinar</button>
+                        </div>
+                    </form>
+                    <h6 class="fw-bold mb-3 small text-white-50">Segmentos atendidos:</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="segment-tag">Automotivo</span>
+                        <span class="segment-tag">Agroindústria</span>
+                        <span class="segment-tag">Indústria 4.0</span>
+                        <span class="segment-tag">IoT</span>
+                        <span class="segment-tag">Energia</span>
+                        <span class="segment-tag">Médico</span>
+                    </div>
+                </div>
+
+                <hr class="footer-divider my-5">
+
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="small text-white-50 mb-0">© 2026 QRS Engenharia. Todos os direitos reservados.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <p class="small text-white-50">© 2026 QRS Engenharia. Todos os direitos reservados.</p>
-        </div>
     </footer>
 
+    <!-- 
+        ==================================================
+        BOTÃO "VOLTAR AO TOPO"
+        ==================================================
+        - Aparece quando o usuário rola a página para baixo.
+        - Leva de volta suavemente ao início da página.
+    -->
     <button id="backToTop" class="btn btn-accent rounded-circle shadow" aria-label="Voltar ao topo">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
 
+    <!-- 
+        ==================================================
+        ÍCONE FLUTUANTE DO WHATSAPP
+        ==================================================
+        - Link direto para o WhatsApp com uma mensagem pré-formatada.
+        - Fica fixo no canto inferior direito.
+    -->
     <a id="whatsappFloat"
         href="https://wa.me/5511958118676?text=Olá%2C%20visitei%20o%20site%20da%20QRS%20Engenharia%20e%20gostaria%20de%20informações%20sobre%20um%20projeto."
         target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
@@ -363,7 +637,13 @@
         </svg>
     </a>
 
-
+    <!-- 
+        ==================================================
+        SCRIPTS JAVASCRIPT
+        ==================================================
+        - Bootstrap JS (necessário para o menu offcanvas, abas, etc.)
+        - Script personalizado da QRS (para backToTop, validação de formulário, etc.)
+    -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>

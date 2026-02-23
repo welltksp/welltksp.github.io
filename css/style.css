@@ -592,3 +592,158 @@ footer .h4 {
 #portfolio .section-title {
     margin-bottom: 2rem !important;
 }
+
+/* ===== FOOTER QRS ENGENHARIA ===== */
+
+/* Badges de serviços */
+.trust-badge {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+    background-color: var(--color-accent);
+    color: #000000;
+    border-color: var(--color-accent);
+}
+
+/* Links do footer */
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-link:hover {
+    color: var(--color-accent);
+    padding-left: 3px;
+}
+
+/* Ícones sociais */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-3px);
+    border-color: var(--color-accent);
+}
+
+.social-icon:hover svg {
+    fill: #000000;
+}
+
+/* Newsletter - LEGÍVEL */
+.newsletter-input {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    color: #212529;
+    height: 45px;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-input:focus {
+    background-color: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+    color: #212529;
+}
+
+.newsletter-input::placeholder {
+    color: #6c757d;
+}
+
+.btn-newsletter {
+    background-color: rgba(252, 193, 86, 0.1);
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-weight: 600;
+    padding: 0 1.2rem;
+    height: 45px;
+    border-radius: 0 4px 4px 0;
+    transition: all 0.3s ease;
+}
+
+.btn-newsletter:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+}
+
+/* Tags de segmentos */
+.segment-tag {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    padding: 0.2rem 0.8rem;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.segment-tag:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* Linha divisória */
+.footer-divider {
+    opacity: 0.15;
+    border-color: #ffffff;
+    margin: 2rem 0;
+}
+
+/* Ajustes de espaçamento */
+.footer .list-unstyled li {
+    margin-bottom: 0.6rem !important;
+}
+
+/* ============================================
+   CORREÇÃO FINAL - ALINHAMENTO E LARGURA
+   ============================================ */
+
+/* Garante que o rodapé use a largura total disponível */
+.footer .container {
+    max-width: 1320px;
+}
+
+/* Alinhamento da lista de contatos */
+.footer .list-unstyled {
+    padding-left: 0 !important;
+    margin-bottom: 0;
+}
+
+.footer .list-unstyled li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem !important;
+}
+
+/* Resolve o "estreito": permite que o conteúdo dite o espaço */
+.footer .list-unstyled li .d-flex {
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    /* Impede que o e-mail quebre em duas linhas se houver espaço */
+}
+
+/* Garante que as colunas ocupem o espaço correto no grid */
+.footer .row>div {
+    display: block;
+}
